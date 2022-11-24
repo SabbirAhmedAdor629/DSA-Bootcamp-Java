@@ -28,7 +28,9 @@ public class CLL {
         if (head != null) {
             do {
                 System.out.print(node.val + " -> ");
-                node = node.next;
+                if (node.next != null) {
+		    node = node.next;
+		}
             } while (node != head);
         }
         System.out.println("HEAD");
@@ -37,6 +39,12 @@ public class CLL {
     public void delete(int val) {
         Node node = head;
         if (node == null) {
+            return;
+        }
+
+        if (head == tail){
+            head = null;
+            tail = null;
             return;
         }
 
